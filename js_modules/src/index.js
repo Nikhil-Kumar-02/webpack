@@ -11,7 +11,7 @@ and doesnt export and modules
 
 */
 
-const sum = require('./sum');
+import sum from "./sum"
 
 const total = sum(3,4);
 console.log(total);
