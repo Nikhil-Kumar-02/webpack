@@ -1,1 +1,1 @@
-(()=>{"use strict";console.log(7)})();
+(()=>{var e={492(){var e=document.createElement("img");e.src="https://picsum.photos/seed/myproject/400/400",document.body.appendChild(e)}},r={};function t(o){var s=r[o];if(void 0!==s)return s.exports;var p=r[o]={exports:{}};return e[o](p,p.exports,t),p.exports}(()=>{"use strict";t(492);var e=3+4;console.log(e)})()})();
