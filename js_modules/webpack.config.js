@@ -1,11 +1,13 @@
 const path = require('path')
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const config = {
   mode: 'production',
   entry : './src/index.js',
   output : {
     path : path.resolve(__dirname,'build'),
-    filename : 'bundle.js'
+    filename : 'bundle.js',
+    clean: true
   },
   module: {
     rules: [
@@ -21,11 +23,18 @@ const config = {
       },
       {
         test: /\.css$/,
-        exclude: /node_modules/,
-        use: ['style-loader', 'css-loader']
+        use: [
+          MiniCssExtractPlugin.loader, // replaces style-loader
+          "css-loader"
+        ]
       }
     ]
-  }
+  },
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: "styles.css"
+    })
+  ]
 };
 
 module.exports = config;
