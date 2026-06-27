@@ -1,3 +1,5 @@
+import '../styles/image_viewer.css'
+
 const image = document.createElement('img');
 
 image.src = "https://picsum.photos/seed/myproject/400/400"
