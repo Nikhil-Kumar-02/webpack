@@ -11,8 +11,19 @@ and doesnt export and modules
 
 */
 
-import sum from "./sum"
-import "./image_viewer"
+// import sum from "./sum"
+// import "./image_viewer"
 
-const total = sum(3,4);
-console.log(total);
+// const total = sum(3,4);
+// console.log(total);
+
+const button = document.createElement("button");
+button.innerText = "Click Me!";
+
+button.onclick = () => {
+  import("./image_viewer").then(module => {
+    console.log(module)
+  })
+}
+
+document.body.appendChild(button);
