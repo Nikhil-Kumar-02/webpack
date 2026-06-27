@@ -2,7 +2,7 @@ const path = require('path')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const config = {
-  mode: 'production',
+  mode: 'development',
   entry : './src/index.js',
   output : {
     path : path.resolve(__dirname,'build'),
@@ -27,6 +27,16 @@ const config = {
           MiniCssExtractPlugin.loader, // replaces style-loader
           "css-loader"
         ]
+      },
+      { 
+        test: /\.(png|jpe?g|gif|svg|webp|jfif)$/i, 
+        type: "asset", 
+        parser: { 
+          dataUrlCondition: 
+          { 
+            maxSize: 10 * 1024 // 8 KB 
+          } 
+        } 
       }
     ]
   },
